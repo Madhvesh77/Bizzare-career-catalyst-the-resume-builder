@@ -3,14 +3,5 @@
 The project is developed using HTML, CSS, and JavaScript, ensuring a smooth and interactive user experience.
 "Bizzare - Career Catalyst" aims to empower job seekers by providing them with a hassle-free resume building experience, enabling them to present their skills and qualifications effectively to potential employers. Whether individuals are just starting their careers or seeking to advance in their professions, the website serves as a valuable tool to showcase their abilities in a professional and visually appealing manner.
 
-The directory structure of the project is as follows:
-Web project
-|
-|----->images/
-|        |----> //All necessary images are stored here
-|----->index.html  //main page
-|----->resume.html  //resume builder
-|----->feedback.html //feedback page
-|----->info.html     //info about the me and project
-|----->styles.css    //Styling of web pages
-|----->script.js     //scripting 
+![image](https://github.com/Madhvesh77/Bizzare-career-catalyst-the-resume-builder/assets/101399792/f84280db-0a32-4dac-b172-b434938ce6e1)
+
