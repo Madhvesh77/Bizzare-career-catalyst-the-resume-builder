@@ -25,10 +25,10 @@
         <center>
             <input type="color" id="colorpicker">
             <div id="resumediv">
-                <label for="fullname" id="fullname" contenteditable="true" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;font-size: xx-large;font: bolder;text-transform: uppercase;">Your Name</label>
-                <h6 contenteditable="true" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;font-size: medium; font: bold;text-transform: capitalize;">Designation</h6>
+                <center><label for="fullname" id="fullname" contenteditable="true" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;font-size: xx-large;font: bolder;text-transform: uppercase;">Your Name</label></center>
+                <center><h6 contenteditable="true" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;font-size: medium; font: bold;text-transform: capitalize;">Designation</h6></center>
                 <p contenteditable="true" align="left" style="padding-left: 10px;color: black; line-height: 22px;font-family: Arial, Helvetica, sans-serif; font-size: small;margin-top: 0%;">An enthusiastic final year student actively pursuing opportunities to utilize exceptional communication skills and extensive knowledge in cybersecurity. Demonstrates a strong passion for continuous learning and exhibits adaptability to thrive in diverse work environments. Aiming to apply technical expertise and cybersecurity acumen to make valuable contributions within a forward-thinking organization.</p>
-                <span id="personaldetails"contenteditable="true" style="display: block;padding-top: 5px;">example@gmail.com +91 9876543210</span>
+                <center><h6 id="personaldetails"contenteditable="true" style="display: block;padding-top: 5px;">example@gmail.com +91 9876543210</h6></center>
                 <div id="two-columns" contenteditable="true" style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 20px;column-gap: 20px;column-count: 2;">
                     <div id="eachcolumn">
                         <h4  id="educationtitle" align="left" style="padding-top: 10px; padding-left: 10px; font-family: Arial, Helvetica, sans-serif;font-size: large;font: bold;text-transform: uppercase;">Education</h4>
@@ -221,6 +221,7 @@
         colorPicker.addEventListener('input', (event) => {
           const selectedColor = event.target.value;
           textToChange.style.backgroundColor = selectedColor;
+          textToChange.style.color = getcontrastcolor(selectedColor);
           fullname.style.color = selectedColor;
           educationtitle.style.color = selectedColor;
           certificationtitle.style.color = selectedColor;
@@ -236,6 +237,20 @@
           col6.style.borderColor = selectedColor;
           col7.style.borderColor = selectedColor;
         });
+    
+        function getcontrastcolor(color) {
+            // Convert the color to RGB format
+            const hexColor = color.replace("#", "");
+            const r = parseInt(hexColor.substr(0, 2), 16);
+            const g = parseInt(hexColor.substr(2, 2), 16);
+            const b = parseInt(hexColor.substr(4, 2), 16);
+
+            // Calculate the relative luminance (luma) of the color
+            const luma = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+
+            // Choose white or black based on the luma value
+            return luma > 0.5 ? "#000000" : "#FFFFFF";
+        }
     </script>
 </body>
 </html>
